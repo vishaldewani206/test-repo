@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paint</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+        font-size: 1.2rem;
+      }
+      .styles {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: rgb(61, 130, 139);
+        height: 10%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        color: rgb(255, 255, 255);
+        z-index: -1;
+      }
+      label {
+        margin-right: 0.6em;
+      }
+      .range {
+        display: flex;
+        width: 60%;
+      }
+      #range {
+        width: 100%;
+      }
+      .strokeSize {
+        display: flex;
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+      }
+      .starting {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: rgb(78, 114, 116);
+      }
+      .starting h1 {
+        font-size: 5rem;
+        margin-bottom: -10px;
+        color: white;
+        letter-spacing: 2px;
+        filter: drop-shadow(5px 5px black);
+      }
+      .starting p {
+        font-size: 1.2rem;
+        margin-top: 0;
+        color: rgb(196, 196, 196);
+        text-align: left;
+        letter-spacing: 2px;
+      }
+      #clear {
+        width: 15%;
+        max-width: 130px;
+        height: 40px;
+        border: none;
+        border-radius: 20px;
+        background: orange;
+        font-size: 1.2rem;
+      }
+      #clear:hover {
+        opacity: 0.7;
+      }
+      #clear:active {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="starting">
+      <span
+        ><h1 class="heading">Sketchie</h1>
+        <p>Sketch Your Imagination</p></span
+      >
+    </div>
+    <canvas id="canvas"></canvas>
+    <div class="styles">
+      <div class="changeColor">
+        <label for="color">Change Color: </label>
+        <input type="color" id="color" />
+      </div>
+      <div class="strokeSize">
+        <label for="range">Stroke Size: </label>
+        <div class="range">
+          <p id="currentValue">5</p>
+          <input
+            type="range"
+            name="range"
+            id="range"
+            min="1"
+            max="100"
+            value="5"
+          />
+          <p class="highestValue">100</p>
+        </div>
+      </div>
+      <button id="clear">Clear</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
+l
